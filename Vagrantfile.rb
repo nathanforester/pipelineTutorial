@@ -19,7 +19,11 @@
     ansible.vm.box = "bento/ubuntu-20.04"
     ansible.vm.network :private_network, ip: "192.168.33.10"
     ansible.vm.hostname = "ansible"
-    ansible.hostsupdater.aliases = ["ansible"]
+    config.vm.provision "shell", inline: <<-SHELL
+      apt-get update
+      apt-get install -y ansible
+     SHELL
+    end
     ansible.vm.synced_folder "ansible", "/home/ubuntu/ansible"
   end
 end
