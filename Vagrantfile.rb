@@ -23,3 +23,5 @@
     ansible.vm.synced_folder "ansible", "/home/ubuntu/ansible"
   end
 end
+
+# hello, world
