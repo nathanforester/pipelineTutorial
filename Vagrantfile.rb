@@ -13,7 +13,6 @@
     deploy.vm.network :private_network, ip: "192.168.33.11"
     deploy.vm.hostname = "app"
     deploy.hostsupdater.aliases = ["app"]
-    deploy.vm.synced_folder "ansible", "/home/ubuntu/ansible"
   end
 
   config.vm.define "ansible" do |ansible|
@@ -21,7 +20,6 @@
     ansible.vm.network :private_network, ip: "192.168.33.10"
     ansible.vm.hostname = "ansible"
     ansible.hostsupdater.aliases = ["ansible"]
-    ansible.vm.provision "shell", path: "provision.sh"
     ansible.vm.synced_folder "ansible", "/home/ubuntu/ansible"
   end
 end
