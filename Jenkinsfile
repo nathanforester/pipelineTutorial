@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('run app') {
             steps {
-              sh 'ansible-playbook -v /var/lib/jenkins/workspace/basicAppDeploy/playbook.yaml' 
+              sh 'ansible-playbook -v ./ansible/playbook.yaml' 
             }
         }
 
